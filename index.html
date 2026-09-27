@@ -3,135 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050505">
-  <title>KinoRoom</title>
+  <title>Хусниддин Шеркулов</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     body {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% 0%, #292116 0%, #0b0b0b 35%, #030303 75%);
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .container {
-      width: 100%;
-      max-width: 480px;
-      min-height: 100vh;
-      margin: auto;
-      padding: 45px 22px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
     }
+    /* Эмблема HS */
     .logo {
-      width: 105px;
-      height: 105px;
-      border: 1px solid rgba(214, 173, 85, 0.55);
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 28px;
+      border: 1px solid #444;
       border-radius: 50%;
       display: flex;
-      align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
-      box-shadow: 0 0 35px rgba(214, 173, 85, 0.10);
-    }
-    .logo span {
+      align-items: center;
+      position: relative;
       font-family: Georgia, serif;
-      font-size: 38px;
-      font-weight: bold;
-      color: #d6ad55;
+      font-size: 25px;
       letter-spacing: -4px;
     }
+    .logo::before {
+      content: "";
+      position: absolute;
+      width: 62px;
+      height: 62px;
+      border: 1px solid #222;
+      border-radius: 50%;
+    }
+    .logo span {
+      position: relative;
+      left: -2px;
+    }
     h1 {
-      font-family: Georgia, serif;
-      font-size: 36px;
-      color: #d6ad55;
-      letter-spacing: 1px;
-      margin-bottom: 7px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
     }
     .subtitle {
-      color: #999;
+      color: #777;
       font-size: 12px;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 35px;
+      margin-bottom: 42px;
     }
-    .buttons {
-      width: 100%;
+    .links {
       display: flex;
       flex-direction: column;
       gap: 13px;
     }
-    .button {
-      width: 100%;
-      min-height: 62px;
-      border: 1px solid rgba(214, 173, 85, 0.35);
-      border-radius: 16px;
-      background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.055),
-        rgba(255,255,255,0.018)
-      );
-      color: white;
-      text-decoration: none;
+    .link {
+      height: 58px;
+      border: 1px solid #242424;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       padding: 0 20px;
-      transition: 0.25s ease;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.25s ease;
+      background: #090909;
     }
-    .button:active {
-      transform: scale(0.98);
+    .link:hover {
+      border-color: #555;
+      transform: translateY(-2px);
+      background: #0d0d0d;
     }
     .icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 11px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      border: 1px solid rgba(214, 173, 85, 0.35);
-      color: #d6ad55;
-      font-size: 18px;
-      flex-shrink: 0;
+      width: 28px;
+      font-size: 19px;
+      color: #aaa;
+      text-align: center;
     }
-    .button-text {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .button-title {
-      font-size: 15px;
-      font-weight: 600;
-    }
-    .button-subtitle {
-      color: #888;
-      font-size: 12px;
+    .text {
+      flex: 1;
+      text-align: center;
+      margin-right: 28px;
+      font-size: 14px;
+      letter-spacing: 1px;
     }
     .arrow {
-      margin-left: auto;
-      color: #d6ad55;
-      font-size: 22px;
-    }
-    .divider {
-      width: 70px;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d6ad55,
-        transparent
-      );
-      margin: 28px 0 20px;
+      color: #555;
+      font-size: 16px;
     }
     .footer {
-      color: #555;
+      margin-top: 38px;
+      color: #3d3d3d;
       font-size: 10px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
   </style>
@@ -139,65 +117,36 @@
 <body>
   <main class="container">
     <div class="logo">
-      <span>KR</span>
+      <span>H</span><span>S</span>
     </div>
-    <h1>KinoRoom</h1>
+    <h1>Хусниддин Шеркулов</h1>
     <div class="subtitle">
-      Film · Series · More
+      Personal Card
     </div>
-    <div class="buttons">
-      <a
-        class="button"
-        href="https://instagram.com/kinoroom_st"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <div class="links">
+      <a class="link"
+         href="https://instagram.com/sherqulov.o1"
+         target="_blank">
         <div class="icon">◎</div>
-        <div class="button-text">
-          <div class="button-title">Instagram</div>
-          <div class="button-subtitle">@kinoroom_st</div>
-        </div>
+        <div class="text">Instagram</div>
         <div class="arrow">›</div>
       </a>
-      <a
-        class="button"
-        href="https://t.me/Kinoroom_st"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="icon">➤</div>
-        <div class="button-text">
-          <div class="button-title">Telegram</div>
-          <div class="button-subtitle">@Kinoroom_st</div>
-        </div>
+      <a class="link"
+         href="https://t.me/sherqulov1"
+         target="_blank">
+        <div class="icon">✈</div>
+        <div class="text">Telegram</div>
         <div class="arrow">›</div>
       </a>
-      <a
-        class="button"
-        href="tel:+998988009609"
-      >
-        <div class="icon">☎</div>
-        <div class="button-text">
-          <div class="button-title">Позвонить</div>
-          <div class="button-subtitle">+998 98 800 96 09</div>
-        </div>
-        <div class="arrow">›</div>
-      </a>
-      <a
-        class="button"
-        href="tel:+998902525522"
-      >
-        <div class="icon">☎</div>
-        <div class="button-text">
-          <div class="button-title">Позвонить</div>
-          <div class="button-subtitle">+998 90 252 55 22</div>
-        </div>
+      <a class="link"
+         href="tel:+998880749939">
+        <div class="icon">⌕</div>
+        <div class="text">+998 88 074 99 39</div>
         <div class="arrow">›</div>
       </a>
     </div>
-    <div class="divider"></div>
     <div class="footer">
-      KINOROOM
+      Digital Card
     </div>
   </main>
 </body>
