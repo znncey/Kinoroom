@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Хусниддин Шеркулов</title>
+  <title>KinoRoom</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,59 +12,77 @@
     }
     body {
       min-height: 100vh;
-      background: #050505;
-      color: #ffffff;
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          #321708 0%,
+          #120a05 28%,
+          #050403 60%,
+          #020202 100%
+        );
+      color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow-x: hidden;
     }
     .container {
       width: 90%;
       max-width: 420px;
       text-align: center;
+      padding: 35px 0;
     }
-    /* Эмблема HS */
+    /* Кино-эмблема */
     .logo {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 28px;
-      border: 1px solid #444;
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 25px;
+      border: 1px solid #c86b20;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
-      font-family: Georgia, serif;
-      font-size: 25px;
-      letter-spacing: -4px;
+      background: rgba(30, 13, 4, 0.45);
+      box-shadow:
+        0 0 25px rgba(225, 105, 20, 0.18),
+        inset 0 0 20px rgba(225, 105, 20, 0.05);
     }
     .logo::before {
       content: "";
       position: absolute;
-      width: 62px;
-      height: 62px;
-      border: 1px solid #222;
+      width: 72px;
+      height: 72px;
+      border: 1px solid #633313;
       border-radius: 50%;
     }
-    .logo span {
+    .popcorn {
       position: relative;
-      left: -2px;
+      font-size: 35px;
+      filter: drop-shadow(0 0 8px rgba(255, 142, 45, 0.35));
     }
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
+      font-size: 31px;
       font-weight: 400;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 9px;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
     }
     .subtitle {
-      color: #777;
-      font-size: 12px;
-      letter-spacing: 3px;
+      color: #bd7a45;
+      font-size: 10px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 42px;
+      margin-bottom: 38px;
+    }
+    /* Декоративная линия */
+    .line {
+      width: 48px;
+      height: 1px;
+      background: #c86b20;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 10px rgba(220, 110, 25, 0.45);
     }
     .links {
       display: flex;
@@ -72,81 +90,123 @@
       gap: 13px;
     }
     .link {
-      height: 58px;
-      border: 1px solid #242424;
-      border-radius: 12px;
+      height: 61px;
+      border: 1px solid #3a2111;
+      border-radius: 13px;
       display: flex;
       align-items: center;
       padding: 0 20px;
       text-decoration: none;
       color: #fff;
+      background: rgba(15, 9, 5, 0.88);
       transition: all 0.25s ease;
-      background: #090909;
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3);
     }
     .link:hover {
-      border-color: #555;
       transform: translateY(-2px);
-      background: #0d0d0d;
+      border-color: #c86b20;
+      background: rgba(35, 17, 7, 0.95);
+      box-shadow:
+        0 8px 30px rgba(210, 100, 20, 0.14);
     }
     .icon {
-      width: 28px;
+      width: 30px;
       font-size: 19px;
-      color: #aaa;
+      color: #e58a3a;
       text-align: center;
+      text-shadow: 0 0 10px rgba(230, 120, 35, 0.35);
     }
     .text {
       flex: 1;
       text-align: center;
-      margin-right: 28px;
+      margin-right: 30px;
       font-size: 14px;
       letter-spacing: 1px;
+      color: #f5e8dc;
     }
     .arrow {
-      color: #555;
-      font-size: 16px;
+      color: #855026;
+      font-size: 18px;
     }
     .footer {
-      margin-top: 38px;
-      color: #3d3d3d;
-      font-size: 10px;
-      letter-spacing: 3px;
+      margin-top: 35px;
+      color: #5b351d;
+      font-size: 9px;
+      letter-spacing: 4px;
       text-transform: uppercase;
+    }
+    /* Маленькие декоративные элементы */
+    .stars {
+      position: fixed;
+      width: 3px;
+      height: 3px;
+      background: #c86b20;
+      border-radius: 50%;
+      opacity: 0.35;
+    }
+    .s1 {
+      top: 15%;
+      left: 12%;
+    }
+    .s2 {
+      top: 28%;
+      right: 13%;
+    }
+    .s3 {
+      bottom: 20%;
+      left: 17%;
+    }
+    .s4 {
+      bottom: 30%;
+      right: 15%;
     }
   </style>
 </head>
 <body>
+  <div class="stars s1"></div>
+  <div class="stars s2"></div>
+  <div class="stars s3"></div>
+  <div class="stars s4"></div>
   <main class="container">
     <div class="logo">
-      <span>H</span><span>S</span>
+      <div class="popcorn">🍿</div>
     </div>
-    <h1>Хусниддин Шеркулов</h1>
+    <div class="line"></div>
+    <h1>KinoRoom</h1>
     <div class="subtitle">
-      Personal Card
+      Cinema • Movies • Entertainment
     </div>
     <div class="links">
       <a class="link"
-         href="https://instagram.com/sherqulov.o1"
+         href="https://instagram.com/kinoroom_st"
          target="_blank">
         <div class="icon">◎</div>
         <div class="text">Instagram</div>
         <div class="arrow">›</div>
       </a>
       <a class="link"
-         href="https://t.me/sherqulov1"
+         href="https://t.me/Kinoroom_st"
          target="_blank">
         <div class="icon">✈</div>
         <div class="text">Telegram</div>
         <div class="arrow">›</div>
       </a>
       <a class="link"
-         href="tel:+998880749939">
-        <div class="icon">⌕</div>
-        <div class="text">+998 88 074 99 39</div>
+         href="tel:+998988009609">
+        <div class="icon">☎</div>
+        <div class="text">+998 98 800 96 09</div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="link"
+         href="tel:+998902525522">
+        <div class="icon">☎</div>
+        <div class="text">+998 90 252 55 22</div>
         <div class="arrow">›</div>
       </a>
     </div>
     <div class="footer">
-      Digital Card
+      Digital Cinema Card
     </div>
   </main>
 </body>
